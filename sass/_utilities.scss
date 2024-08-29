@@ -1,0 +1,19 @@
+$Dark-Gray: hsl(0, 0%, 63%);
+$Black: hsl(0, 0%, 0%);
+$White: hsl(0, 0%, 100%);
+$Very-Dark-Gray: hsl(0, 0%, 27%);
+$Font-size: 12px;
+
+@mixin spartan-league-font (){
+	font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin nav-link-style() {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1em;
+}

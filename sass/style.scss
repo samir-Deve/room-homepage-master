@@ -1,0 +1,333 @@
+@use "./utilities" as u;
+@use "./breakpoints" as b;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 15px;
+	@include u.spartan-league-font
+
+}
+.header {
+	position: relative;
+	margin-bottom: 2em;
+
+	&__toggle-mobile-menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 0.3em;
+		width: 2em;
+		cursor: pointer;
+		z-index: 99;
+
+		@include b.respond-to("tablet") {
+			display: none;
+		}
+
+		@include b.respond-to("desktop") {
+			display: none;
+		}
+	}
+
+	&__toggle-mobile-menu-line {
+		height: 0.2em;
+		background-color: u.$White;
+		border-radius: 0.5em;
+		transition: transform 0.3s ease;
+	}
+
+	&__toggle-mobile-menu.show-menu {
+		justify-content: center;
+		gap: 0em;
+	}
+
+	&__toggle-mobile-menu.show-menu .header__toggle-mobile-menu-line--second--line {
+		display: none;
+	}
+
+	&__toggle-mobile-menu.show-menu .header__toggle-mobile-menu-line {
+		background-color: u.$Very-Dark-Gray;
+		z-index: 99;
+	}
+
+
+	.show-menu .header__toggle-mobile-menu-line.one {
+		transform: rotate(45deg) translateY(0.1em) translateX(0.1em);
+	}
+
+	.show-menu .header__toggle-mobile-menu-line.three {
+		transform: rotate(-45deg);
+	}
+
+	&__logo-nav {
+		display: flex;
+		gap: calc(1em + 3vw);
+		position: absolute;
+		top: 3em;
+		left: 1em;
+		z-index: 99;
+	}
+
+	&__logo {
+		height: 1.2em;
+	}
+
+	&__nav-links {
+		&--cont {
+			display: flex;
+			gap: 1.5em;
+		}
+
+		a {
+			text-decoration: none;
+			color: u.$White;
+			position: relative;
+			transition: after 0.9s ease;
+			&:hover {
+				&::after {
+					content: "";
+					background-color: u.$White;
+					position: absolute;
+					height: 0.1em;
+					width: 100%;
+					top: 1.2em;
+					left: 0em;
+					border-radius: 1em;
+				}
+			}
+		}
+		@include b.respond-to("mobile") {
+			display: none
+		}
+
+		@include b.respond-to("tablet") {
+			@include u.nav-link-style();
+		}
+
+		@include b.respond-to("desktop") {
+			@include u.nav-link-style();
+		}
+	}
+
+	&__nav-links.menu-active {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: flex-start;
+		height: 5em;
+		position: absolute;
+		background-color: hsla(0, 0%, 50%, 0.33);
+		width: 100vw;
+		height: 120em;
+		top: -3em;
+		left: -2em;
+		padding-bottom: 0.5em;
+		a {
+			color: black;
+			font-weight: 700;
+			&:first-child {
+				margin-left: 6em;
+			}
+		}
+	}
+
+	&__nav-links.menu-active .header__nav-links--cont {
+		background-color: u.$White;
+		width: 100%;
+		height: 8em;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+
+
+	&__grid-card {
+		@include b.respond-to("tablet") {
+			display: grid;
+			grid-template-columns: 1fr calc(50px + 5vw) 1fr;
+		}
+
+		@include b.respond-to("desktop") {
+			display: grid;
+			grid-template-columns: 1fr calc(50px + 5vw) 1fr;
+		}
+	}
+
+	&__img {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		position: relative;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__change-content-btns {
+		position: absolute;
+		@include b.respond-to("mobile") {
+			right: 0em;
+			bottom: 1.5em;
+		}
+
+		@include b.respond-to("tablet") {
+			right: 0em;
+			bottom: 1.5em;
+		}
+
+		@include b.respond-to("desktop") {
+			right: -10em;
+			bottom: 1.5em;
+		}
+	}
+	&__change-content-btn {
+		border: none;
+		background-color: u.$Black;
+		padding: 1.5em 2em;
+
+		&:hover {
+			background-color: u.$Very-Dark-Gray;
+			cursor: pointer;
+		}
+
+		i {
+			color: u.$White;
+		}
+	}
+
+	&__card-info {
+		grid-column-start: 3;
+		grid-column-end: 5;
+		padding: calc(0.5em + 7vw);
+	}
+
+	&__card-info-header {
+		font-size: calc(2.5em + 1vw);
+		font-weight: 700;
+		margin: 0.5em auto;
+		@include b.respond-to("mobile") {
+			margin: 1em 0em;
+		}
+	}
+
+	&__card-info-para {
+		font-size: 1.1em;
+		color: u.$Dark-Gray;
+		margin-bottom: calc(1em + 1vw);
+	}
+
+	&__shop-now {
+		padding: 0.5em 0em;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		&:hover {
+			color: u.$Dark-Gray;
+		}
+
+		&--text {
+			letter-spacing: calc(0em + 1vw);
+			text-transform: uppercase;
+			font-weight: 500
+		}
+
+		&--icon {
+			margin-left: calc(0.2em + 1vw);
+		}
+	}
+
+}
+
+.main {
+	@include b.respond-to("mobile") {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr calc(1fr + 5vw) 1fr;
+	}
+
+	@include b.respond-to("tablet") {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	@include b.respond-to("desktop") {
+		display: grid;
+		grid-template-columns: 1fr 1fr calc(100px + 2vw) 1fr;
+	}
+
+	&__img-about {
+		width: 100%;
+		height: 100%;
+
+		&--black{
+			grid-column: 1/2;
+
+			@include b.respond-to("mobile") {
+				grid-column: 1/2;
+				grid-row: 1/2;
+			}
+
+			@include b.respond-to("tablet") {
+				grid-column: 2/4;
+				grid-row: 2/3;
+			}
+
+		}
+
+		&--bright {
+			grid-column: 4/5;
+
+			@include b.respond-to("mobile") {
+				grid-column: 1/2;
+				grid-row: 3/4;
+			}
+
+			@include b.respond-to("tablet") {
+				grid-column: 1/2;
+				grid-row: 2/3;
+			}
+		}
+	}
+
+	&__about {
+		padding: 1.5em;
+		grid-column: 2/4;
+
+		@include b.respond-to("mobile") {
+			grid-column: 1/2;
+			grid-row: 2/3;
+			padding: 1em;
+		}
+
+		@include b.respond-to("tablet") {
+			grid-column: 1/5;
+			grid-row: 1/2;
+		}
+	}
+
+	&__about-header {
+		font-size: 1.5em;
+		text-align: start;
+		letter-spacing: 0.2em;
+		margin: 1em 0em;
+	} 
+
+	&__about-para {
+		color: u.$Dark-Gray;
+		line-height: 1.2em;
+	}
+}
+
+
+
+
+
+.attribution {
+	 font-size: 16px; text-align: center; 
+	a {
+		color: hsl(228, 45%, 44%);
+		text-decoration: none;
+	}
+}

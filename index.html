@@ -1,0 +1,108 @@
+<!DOCTYPE html__shop-now>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- font awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+
+    
+  <title>Frontend Mentor | Room homepage</title>
+
+  <!-- css styles -->
+  <link rel="stylesheet" href="./dist/css/style.css">
+</head>
+<body>
+
+  <header class="header" role="banner" aria-label="page banner">
+    <section class="header__logo-nav">
+      <div class="header__toggle-mobile-menu ">
+        <span class="header__toggle-mobile-menu-line one"></span>
+        <span class="header__toggle-mobile-menu-line 
+        header__toggle-mobile-menu-line--second--line"></span>
+        <span class="header__toggle-mobile-menu-line three"></span>
+      </div>
+
+      <img src="./images/logo.svg" alt="logo img" class="header__logo">
+
+      <nav class="header__nav-links" role="navigation" aria-label="page navigation links">
+        <div class="header__nav-links--cont">
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+    </section>
+
+    <section class="header__grid-cards-cont">
+      <div class="header__grid-card">
+        <figure class="header__img">
+          <img class="header__img-itself" src="./images/mobile-image-hero-1.jpg" alt="">
+
+          <div class="header__change-content-btns">
+
+            <span class="header__change-content-btn left">
+              <i class="fa-solid fa-arrow-left"></i> 
+            </span>
+            <span class="header__change-content-btn right">
+              <i class="fa-solid fa-arrow-right"></i> 
+            </span>
+          </div>
+        </figure>
+
+        <article class="header__card-info">
+          <h1 class="header__card-info-header">
+            Discover innovative ways to decorate
+          </h1>
+          <p class="header__card-info-para">
+            We provide unmatched quality, comfort, and style for property owners across the country. 
+            Our experts combine form and function in bringing your vision to life. Create a room in your 
+            own style with our collection and make your property a reflection of you and what you love.
+          </p>
+          <span class="header__shop-now">
+            <p class="header__shop-now--text">Shop now</p>
+            <svg class="header__shop-now--icon" width="40" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill="#000" fill-rule="nonzero"/></svg>
+          </span>
+        </article>
+
+      </div>
+    </section>
+  </header>
+
+  <main class="main" role="main" aria-label="main content of the page">
+
+    <img src="./images/image-about-dark.jpg" alt="image about dark" class="main__img-about main__img-about--black">
+
+    <article class="main__about">
+      <h1 class="main__about-header">
+        About our furniture
+      </h1>
+
+      <p class="main__about-para">
+        Our multifunctional collection blends design and function to suit your individual taste.
+        Make each room unique, or pick a cohesive theme that best express your interests and what
+        inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+        or anything in between. Product specialists are available to help you create your dream space.
+      </p>
+    </article>
+
+    <img class="main__img-about main__img-about--bright" src="./images/image-about-light.jpg" alt="">
+
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Samir Yorogli</a>.
+  </div>
+  <script type="module" src="./JS/script.js"></script>
+</body>
+</html>
